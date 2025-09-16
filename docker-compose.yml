@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongodb/mongodb-community-server:5.0.27-ubuntu2004
+    read_only: false
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=$MONGO_USR
+      - MONGODB_INITDB_ROOT_PASSWORD=$MONGO_PSW
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+    security_opt:
+      - no-new-privileges:true
+
+  express:
+    container_name: express
+    image: mongo-express:1.0.2-20-alpine3.19
+    depends_on:
+      - mongodb
+    read_only: true
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://$MONGO_USR:$MONGO_PSW@mongodb:27017/db?ssl=false
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=$MONGO_USR
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=$MONGO_PSW
+      - ME_CONFIG_BASICAUTH_USERNAME=$MONGO_USR
+      - ME_CONFIG_BASICAUTH_PASSWORD=$MONGO_PSW
+    ports:
+      - "8081:8081"
+    networks:
+      - backend
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  backend:
+    name: mongodb-network
+
+volumes:
+  mongodb-data:

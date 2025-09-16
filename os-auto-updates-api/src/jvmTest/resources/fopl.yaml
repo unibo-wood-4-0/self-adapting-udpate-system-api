@@ -1,0 +1,30 @@
+suite:
+  - name: "fopl"
+    deploymentStrategies:
+      - type: "PackageManager"
+        packageManager:
+          type: "Pip"
+    version:
+      type: "SemanticVersion"
+      version: "0.0.2"
+    dependencies:
+      - name: "python-pip"
+        validationTests: []
+        deploymentStrategies:
+          - type: "PackageManager"
+            packageManager:
+              type: "Yay"
+        version:
+          type: "TagVersion"
+          tag: "latest"
+        dependencies: []
+      - name: "tk"
+        validationTests: []
+        deploymentStrategies:
+          - type: "PackageManager"
+            packageManager:
+              type: "Yay"
+        version:
+          type: "TagVersion"
+          tag: "latest"
+        dependencies: []

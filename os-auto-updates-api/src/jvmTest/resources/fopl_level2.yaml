@@ -1,0 +1,34 @@
+_latestVersion: &latestVersion
+  type: "TagVersion"
+  tag: "latest"
+
+_pipPackageManager: &pipPackageManager
+  type: "PackageManager"
+  packageManager:
+    type: "Pip"
+
+_yayPackageManager: &yayPackageManager
+  type: "PackageManager"
+  packageManager:
+    type: "Yay"
+
+suite:
+  - name: "fopl"
+    deploymentStrategies:
+      - *pipPackageManager
+    version:
+      type: "SemanticVersion"
+      version: "0.0.2"
+    dependencies:
+      - name: "python-pip"
+        validationTests: []
+        deploymentStrategies:
+          - *yayPackageManager
+        version: *latestVersion
+        dependencies: []
+      - name: "tk"
+        validationTests: []
+        deploymentStrategies:
+          - *yayPackageManager
+        version: *latestVersion
+        dependencies: []

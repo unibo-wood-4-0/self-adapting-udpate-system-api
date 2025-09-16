@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-api-0.31.0-test/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-api-0.31.0/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-api-test/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-api/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-manager-0.31.0-test/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-manager-0.31.0/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-microservice-0.31.0-test/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-microservice-0.31.0/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-os-auto-updates-manager-test/node_modules" />
+    <excludedPredefinedLibrary name="self-adapting-update-system-api/build/js/packages/os-auto-updates-os-auto-updates-manager/node_modules" />
+  </component>
+</project>

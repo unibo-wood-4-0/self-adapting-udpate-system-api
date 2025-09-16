@@ -1,0 +1,151 @@
+[versions]
+arrow = "2.1.2"
+kotest = "6.0.1"
+ksp = "2.2.0-2.0.2"
+kotlin = "2.2.0"
+ktor = "3.2.3"
+mongodb = "5.5.0"
+jna = "5.17.0"
+logging = "7.0.7"
+winsw = "v2.12.0"
+
+[libraries]
+# Arrow
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-core-serialization = { module = "io.arrow-kt:arrow-core-serialization", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
+arrow-resilience = { module = "io.arrow-kt:arrow-resilience", version.ref = "arrow" }
+
+# CLI
+clikt = "com.github.ajalt.clikt:clikt:5.0.3"
+
+# Kotest
+kotest-symbol-processor = { module = "io.kotest:kotest-framework-symbol-processor", version.ref = "kotest" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
+kotest-framework-datatest = { module = "io.kotest:kotest-framework-datatest", version = "5.9.1" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
+kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+
+# Kotlin
+kotlin-test-common = { module = "org.jetbrains.kotlin:kotlin-test-common", version.ref = "kotlin" }
+kotlin-test-annotations-common = { module = "org.jetbrains.kotlin:kotlin-test-annotations-common", version.ref = "kotlin" }
+kotlinx-coroutine-core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2"
+kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.2"
+kotlinx-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1"
+kotlinx-io-core = "org.jetbrains.kotlinx:kotlinx-io-core:0.8.0"
+
+# Ktor
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+## Ktor Client
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+## Ktor Server
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
+ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+
+## Serialization
+snakeyaml = { module = "org.yaml:snakeyaml", version = "2.4"}
+jackson-dataformat-yaml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml", version = "2.19.2" }
+
+# MongoDB
+
+mongodb-driver-core = { module = "org.mongodb:mongodb-driver-core", version.ref = "mongodb" }
+mongodb-driver-sync = { module = "org.mongodb:mongodb-driver-sync", version.ref = "mongodb" }
+mongodb-driver-kotlin-coroutines = { module = "org.mongodb:mongodb-driver-kotlin-coroutine", version.ref = "mongodb" }
+mongodb-bson-kotlinx = { module = "org.mongodb:bson-kotlinx", version.ref = "mongodb" }
+
+# Logging
+logging = { module = "io.github.oshai:kotlin-logging", version.ref = "logging" }
+logback-classic = "ch.qos.logback:logback-classic:1.5.18"
+jansi = "org.fusesource.jansi:jansi:2.4.2"
+
+# Plugins Libs
+jpackage-plugin = "org.panteleyev.jpackageplugin:org.panteleyev.jpackageplugin.gradle.plugin:1.7.3"
+kotlin-multiplatform-plugin = {module = "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin"}
+js-plain-objects-plugin =  { module = "org.jetbrains.kotlin.plugin.js-plain-objects:org.jetbrains.kotlin.plugin.js-plain-objects.gradle.plugin", version.ref = "kotlin" }
+
+
+# JNA
+java-jna = { module = "net.java.dev.jna:jna", version.ref = "jna" }
+java-jna-platform = { module = "net.java.dev.jna:jna-platform", version.ref = "jna" }
+
+[bundles]
+arrow = [
+    "arrow-core",
+    "arrow-core-serialization",
+    "arrow-fx-coroutines",
+    "arrow-resilience"
+]
+kotest-common = [
+    "kotest-assertions-core",
+    "kotest-framework-engine",
+    "kotest-framework-datatest",
+    "kotest-property",
+]
+kotest-jvm = [
+    "kotest-runner-junit5",
+]
+kotlin-testing-common = [
+    "kotlin-test-common",
+    "kotlin-test-annotations-common",
+]
+ktor-client = [
+    "ktor-client-core",
+    "ktor-client-auth",
+    "ktor-client-cio",
+    "ktor-client-content-negotiation",
+    "ktor-serialization-kotlinx-json",
+]
+ktor-server = [
+    "ktor-server-core",
+    "ktor-server-content-negotiation",
+    "ktor-serialization-kotlinx-json",
+    "ktor-server-cors",
+    "ktor-server-test-host",
+    "ktor-server-status-pages",
+]
+ktor-server-jvm = [
+    "ktor-server-config-yaml",
+    "ktor-server-netty",
+]
+mongodb = [
+    "mongodb-driver-kotlin-coroutines",
+    "mongodb-bson-kotlinx"
+]
+
+jna = [
+    "java-jna",
+    "java-jna-platform",
+]
+
+[plugins]
+# Kotlin
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# Kotest
+kotest = { id = "io.kotest", version.ref = "kotest" }
+
+# KSP
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Docs
+dokka = "org.jetbrains.dokka:2.0.0"
+
+# QA assurance
+gitSemVer = "org.danilopianini.git-sensitive-semantic-versioning-gradle-plugin:5.1.7"
+kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.93.0"
+
+# Build
+kover = "org.jetbrains.kotlinx.kover:0.9.1"
+taskTree = "com.dorongold.task-tree:4.0.1"
+versions = "com.github.ben-manes.versions:0.52.0"
