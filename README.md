@@ -53,6 +53,7 @@ a specific purpose.
 - **os-auto-updates-api**
   ![Kotlin Common](https://badgen.net/badge/Kt/Common/grey)
   ![Kotlin JVM](https://badgen.net/badge/Kt/JVM/orange)
+  ![Kotlin JS](https://badgen.net/badge/Kt/JS/yellow)
   contains most of the classes and interfaces used throughout the project.
   These classes are shared among the other subprojects because they represent the core domain model.
 - **os-auto-updates-resolution**
@@ -74,7 +75,7 @@ a consistent commit message style.
 If the commit message does not follow the specification, the commit will be rejected automatically.
 
 The scope of the commit is not enforced, but it is recommended to use the short name of the subproject for which
-the commit is intended, for example `core`, `api`, and `rust`.
+the commit is intended, for example `api` and `resolution`.
 It is possible to omit the scope if the commit is not related to a specific subproject or if it is related to
 multiple subprojects at once.
 
@@ -116,6 +117,7 @@ It should be read as a conceptual overview; the source code remains the authorit
 title: API Class Diagram
 ---
 classDiagram
+    direction LR
 %% Version block
     class Version
     <<interface>> Version
@@ -135,39 +137,37 @@ classDiagram
     VersionSpan --> Version
 
     class ResolutionStrategy {
-        +solve(Software software) ResolvedSoftware
-        +toSingleVersion(RangeVersion~Version~ range) SingleVersion~Version~
+        <<interface>>
     }
-    <<interface>> ResolutionStrategy
-    class MaxResolutionStrategy {
-        +toSingleVersion(RangeVersion~Version~ range) SingleVersion~Version~
-    }
-    class PreferredResolutionStrategy {
-        +toSingleVersion(RangeVersion~Version~ range) SingleVersion~Version~
-    }
-    ResolutionStrategy <|-- MaxResolutionStrategy
-    ResolutionStrategy <|-- PreferredResolutionStrategy
+    class MaxRS
+    class PreferredRS
+    ResolutionStrategy <|-- MaxRS
+    ResolutionStrategy <|-- PreferredRS
 
 %% Software block
     class Software {
         String name
-        Acceptance test
-        VersionSpan~Version~ versionSpan
+        List~OsCommand~ validationTests
         Set~Software~ dependencies
     }
     <<interface>> Software
-    Software "1" --o "1" VersionSpan : versionSpan
     Software "1" --o "*" Software : dependencies
     Software o-- DeploymentStrategy
-    Software --> ResolutionStrategy
 
     class ReleasedSoftware {
-        +resolve(VersionSpanLookup lookup, ResolutionStrategy resolutionStrategy) ResolvedSoftware
+        VersionSpan~Version~ versionSpan
     }
 
     class ResolvedSoftware {
-        +deploy(DeploymentStrategy deploymentStrategy, List~String~ validationTests)
+        Version version
     }
+
+    ResolvedSoftware --|> Software
+    ReleasedSoftware --|> Software
+    ReleasedSoftware --> VersionSpan
+    ResolvedSoftware --> Version
+    ReleasedSoftware --> ResolutionStrategy : resolved by
+    ReleasedSoftware --> VersionSpanLookup
 
     class Suite~S : Software~ {
         -set Set~S~
@@ -175,33 +175,18 @@ classDiagram
 
 interface Suite
 
-ResolvedSuite <|-- Suite
-VettedSuite <|-- Suite
+Suite <|-- ResolvedSuite
+Suite <|-- ReleasedSuite
 
 ResolvedSoftware "*" --o "1" ResolvedSuite
-VettedSoftware "*" --o "1" VettedSuite
+ReleasedSoftware "*" --o "1" ReleasedSuite
 
-class VettedSoftware {
-TestResult result
-DateTime dateTime
-}
-
-VettedSoftware --> TestResult
-
-ResolvedSoftware --|> Software
-ReleasedSoftware --|> Software
-ReleasedSoftware --> VersionSpanLookup
-
-class VersionSpanLookup {
-+Map~String, VersionSpan~Version~~ lookup
-}
-
-VettedSoftware --|> Software
+    class VersionSpanLookup
 
 %% DeploymentStrategy block
 class DeploymentStrategy {
-+validateSoftware(ResolvedSoftware software) ExecutionResult
-+storeUpdatingSoftware(VettedSoftware software) Boolean
-+installSoftware(ResolvedSoftware software) ExecutionResult
++preInstall: List~OsCommand~
++postInstall: List~OsCommand~
++supportCache: Boolean
 }
 ```
