@@ -1,0 +1,146 @@
+{
+   "components":[
+      {
+         "type":"application",
+         "name":"Software A",
+         "version":"1.0.0",
+         "bom-ref":"2b9cd74e-fd26-505f-aaa3-15872a0201ad",
+         "purl":"pkg:generic/software-a@1.0.0",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/software-a-1.0.0.exe"
+            }
+         ],
+         "properties":[
+            {
+               "name":"application:isExplicitlyRequested",
+               "value":"true"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "name":"Software B",
+         "version":"1.0.0",
+         "bom-ref":"131f3db1-5348-5c14-a830-336b544557d7",
+         "purl":"pkg:generic/software-b@1.0.0",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/software-b-1.0.0.exe"
+            }
+         ],
+         "properties":[
+            {
+               "name":"application:isExplicitlyRequested",
+               "value":"true"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "name":"Microsoft Visual C++ 2012 Redistributable (x64)",
+         "version":"11.0.61030.0",
+         "publisher":"Microsoft Corporation",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "purl":"pkg:winget/Microsoft/VCRedist.2012.x64@11.0.61030.0",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/vcredist_x64_2012.exe"
+            }
+         ],
+         "bom-ref":"b62a305d-85f9-5283-a81d-407ed7ac4a2c"
+      },
+      {
+         "type":"application",
+         "name":"Microsoft Visual C++ v14 Redistributable (x64)",
+         "version":"14.50.35719.0",
+         "publisher":"Microsoft Corporation",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "purl":"pkg:winget/Microsoft/VCRedist.2015+.x64@14.50.35719.0",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/vcredist_x64_2015.exe"
+            }
+         ],
+         "bom-ref":"9f0c6c77-7419-55dc-a5ed-d1f34117ac08"
+      },
+      {
+         "type":"application",
+         "name":"Microsoft .NET Windows Desktop Runtime 10.0",
+         "version":"10.0.3",
+         "publisher":"Microsoft Corporation",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "purl":"pkg:winget/Microsoft/DotNet.DesktopRuntime.10@10.0.3",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/Microsoft.DotNet.DesktopRuntime.10.exe"
+            }
+         ],
+         "bom-ref":"15270591-2db2-54c6-9a05-be51595b7d5c"
+      },
+      {
+         "type":"application",
+         "name":"Microsoft ASP.NET Core Runtime 10.0",
+         "version":"10.0.3",
+         "publisher":"Microsoft Corporation",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "purl":"pkg:winget/Microsoft/DotNet.AspNetCore.10@10.0.3",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/Microsoft.DotNet.AspNetCore.10.exe"
+            }
+         ],
+         "bom-ref":"6da01cbc-8c1d-5521-add0-89ce0503a8c8"
+      },
+      {
+         "type":"application",
+         "name":"Microsoft Visual C++ 2013 Redistributable (x64)",
+         "version":"12.0.40664.0",
+         "publisher":"Microsoft Corporation",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "purl":"pkg:winget/Microsoft/VCRedist.2013.x64@12.0.40664.0",
+         "externalReferences":[
+            {
+               "type":"distribution",
+               "url":"https://server-url.com/vcredist_x64_2013.exe"
+            }
+         ],
+         "bom-ref":"dfc2cec8-08c0-5182-95b9-b83df012b231"
+      }
+   ],
+   "dependencies":[
+      {
+         "ref":"2b9cd74e-fd26-505f-aaa3-15872a0201ad",
+         "dependsOn":[
+            "dfc2cec8-08c0-5182-95b9-b83df012b231",
+            "9f0c6c77-7419-55dc-a5ed-d1f34117ac08",
+            "131f3db1-5348-5c14-a830-336b544557d7"
+         ]
+      },
+      {
+         "ref":"131f3db1-5348-5c14-a830-336b544557d7",
+         "dependsOn":[
+            "b62a305d-85f9-5283-a81d-407ed7ac4a2c",
+            "9f0c6c77-7419-55dc-a5ed-d1f34117ac08",
+            "15270591-2db2-54c6-9a05-be51595b7d5c",
+            "6da01cbc-8c1d-5521-add0-89ce0503a8c8"
+         ]
+      }
+   ]
+}

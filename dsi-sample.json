@@ -1,0 +1,406 @@
+{
+   "bomFormat":"CycloneDX",
+   "specVersion":"1.6",
+   "metadata":{
+      "timestamp":"2026-04-22T08:35:15Z",
+      "component":{
+         "type":"device",
+         "name":"WINDOWS11",
+         "properties":[
+            {
+               "name":"cdx:device:serialNumber",
+               "value":"urn:uuid:0000-0000-0000"
+            },
+            {
+               "name":"device:identifyingNumber",
+               "value":"0"
+            }
+         ]
+      }
+   },
+   "components":[
+      {
+         "type":"operating-system",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Windows 11",
+         "version":"10.0.22621.0",
+         "description":"Microsoft Windows 11 Enterprise Evaluation",
+         "purl":"pkg:generic/microsoft/windows-11@10.0.22621.0"
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Author Software Inc."
+         },
+         "publisher":"Author Software Inc.",
+         "name":"NVM for Windows 1.2.2",
+         "version":"1.2.2",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            },
+            {
+               "name":"application:installLocation",
+               "value":"C:\\ProgramData\\nvm\\"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\nvm\\unins000.exe\u0022 /SILENT"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Another"
+         },
+         "publisher":"Another",
+         "name":"Another Redis Desktop Manager 1.6.4",
+         "version":"1.6.4",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\IoT\\RedisClient\\Uninstall Another Redis Desktop Manager.exe\u0022 /allusers /S"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"The Git Development Community"
+         },
+         "publisher":"The Git Development Community",
+         "name":"Git",
+         "version":"2.52.0",
+         "properties":[
+            {
+               "name":"application:installLocation",
+               "value":"C:\\Program Files\\Git\\"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\Program Files\\Git\\unins000.exe\u0022 /SILENT"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Oracle and/or its affiliates"
+         },
+         "publisher":"Oracle and/or its affiliates",
+         "name":"Oracle VM VirtualBox Guest Additions 7.0.10",
+         "version":"7.0.10.158379",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Node.js Foundation"
+         },
+         "publisher":"Node.js Foundation",
+         "name":"Node.js",
+         "version":"24.14.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Amazon"
+         },
+         "publisher":"Amazon",
+         "name":"Amazon Corretto (x64)",
+         "version":"21.0.9.10",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Update Health Tools",
+         "version":"5.72.0.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"MSOpenTech"
+         },
+         "publisher":"MSOpenTech",
+         "name":"Redis on Windows",
+         "version":"3.2.100",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Edge",
+         "version":"146.0.3856.109",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            },
+            {
+               "name":"application:installLocation",
+               "value":"C:\\Program Files (x86)\\Microsoft\\Edge\\Application"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Visual C\u002B\u002B 2013 Redistributable (x64) - 12.0.40664",
+         "version":"12.0.40664.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{042d26ef-3dbe-4c25-95d3-4c1b11b235a7}\\vcredist_x64.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Visual C\u002B\u002B v14 Redistributable (x86) - 14.50.35719",
+         "version":"14.50.35719.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{0e4ccf1b-d073-4cfe-8a24-e86185719b56}\\VC_redist.x86.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Windows Desktop Runtime 10.0.4 (x64)",
+         "version":"10.0.4.50000",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{10818574-9DA5-429E-A390-1EDC71CA9102}\\windowsdesktop-runtime-10.0.4-win-x64.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"vs_CoreEditorFonts",
+         "version":"17.7.40001",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Simon Tatham"
+         },
+         "publisher":"Simon Tatham",
+         "name":"PuTTY release 0.81",
+         "version":"0.81.0.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":".NET Foundation"
+         },
+         "publisher":".NET Foundation",
+         "name":"WiX Toolset v3.14.1.8722",
+         "version":"3.14.1.8722",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{87475ca3-0418-47e5-a51f-de5bd3d0d9fb}\\WiX314.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Visual C\u002B\u002B v14 Redistributable (x64) - 14.50.35719",
+         "version":"14.50.35719.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{91ee571b-0e8a-4c65-9eaf-2e2f5fc60c00}\\VC_redist.x64.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft ASP.NET Core 8.0.24 - Shared Framework (x64)",
+         "version":"8.0.24.26072",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{ae27bafa-c1b4-4d1d-8040-6720177778ca}\\AspNetCoreSharedFrameworkBundle-x64.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Visual C\u002B\u002B 2012 Redistributable (x64) - 11.0.61030",
+         "version":"11.0.61030.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x86"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\ProgramData\\Package Cache\\{ca67548a-5ebe-413a-b50c-4b9ceb6d66c6}\\vcredist_x64.exe\u0022 /uninstall /quiet"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "name":"Rustup: the Rust toolchain installer",
+         "version":"1.28.2",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"The MSYS2 Developers"
+         },
+         "publisher":"The MSYS2 Developers",
+         "name":"MSYS2",
+         "version":"20251213",
+         "description":"MSYS2",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            },
+            {
+               "name":"application:installLocation",
+               "value":"C:\\msys64"
+            }
+         ]
+      },
+      {
+         "type":"application",
+         "supplier":{
+            "name":"Microsoft Corporation"
+         },
+         "publisher":"Microsoft Corporation",
+         "name":"Microsoft Visual Studio Code (User)",
+         "version":"1.112.0",
+         "properties":[
+            {
+               "name":"application:arch",
+               "value":"x64"
+            },
+            {
+               "name":"application:installLocation",
+               "value":"C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\"
+            },
+            {
+               "name":"application:quietUninstall",
+               "value":"\u0022C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\unins000.exe\u0022 /SILENT"
+            }
+         ]
+      }
+   ]
+}

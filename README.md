@@ -60,6 +60,58 @@ a specific purpose.
   contains classes and interfaces to define software with a range of supported versions and then resolve
   the version to be installed, that is, compute the best concrete version that satisfies dependency constraints.
 
+## Architectural context
+
+This repository models the public API of a larger update architecture described in the accompanying research work.
+At a high level, that architecture revolves around four conceptual components:
+
+- a **Software Repository**, which stores deployable artifacts and their metadata
+- a **Software Manager**, which synthesizes device-specific update specifications
+- a **Suite Installer**, which runs on a target device and applies those specifications
+- a **Device**, namely any physical or virtual update target participating in the production environment
+
+Within this architecture, the central concepts represented in this repository are:
+
+- **DSI** (*Device Specification Information*): a machine-readable description of a target device, including identity,
+  operating system, installed software, and other context relevant to update decisions
+- **Suite Manifest**: a declarative description of the target software configuration for a device, including selected
+  components, versions, artifact sources, and dependency relations
+- **Suite**: an actionable deployment specification derived from a suite manifest and enriched with installation
+  strategies, validation steps, and other deployment-time details
+
+The code in this repository mainly captures the common model for suites, software, deployment strategies,
+serialization, and version-resolution logic used by that broader system.
+
+## Example specifications
+
+The repository root contains two sample specifications that reflect the terminology used by the architecture.
+
+### `dsi-sample.json`
+
+This file is an example of a **DSI**.
+It is serialized as a CycloneDX-like JSON document and includes:
+
+- device identity metadata
+- the operating system installed on the target
+- installed applications and versions
+- additional properties such as architecture, installation locations, and uninstall commands
+
+This matches the role of the DSI described in the paper: it is the structured device description used by the
+software manager to understand the current state of a device before generating an update plan.
+
+### `suite-manifest-sample.json`
+
+This file is an example of a **Suite Manifest**.
+It describes a desired software configuration by listing:
+
+- software components and target versions
+- package URLs or other distribution references
+- component metadata such as publishers, suppliers, and package URLs
+- explicit dependency relations between software items
+
+In the architecture described by the paper, a suite manifest is the declarative input used to build a deployable
+suite for a specific device.
+
 ## Quality assurance
 
 ### Static Code Analysis
@@ -106,6 +158,12 @@ This repository is meant to expose the API of the proposed self-adapting update 
 The concrete implementation is not disclosed because it is part of closed-source software.
 
 Therefore, in its current form, it is not possible to run the full system from this repository alone.
+
+What can be inspected here are:
+
+- the public Kotlin model used to represent devices, software, suites, deployments, and resolution strategies
+- the sample JSON specifications in the repository root
+- the tests that document expected behavior of the exposed API
 
 ## API structure
 
