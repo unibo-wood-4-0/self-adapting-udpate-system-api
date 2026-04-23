@@ -1,8 +1,8 @@
 # os-auto-updates
 
 This project contains the API definition of a self-adaptive update system for software packages.
-The target machines of this system are Wood Working machines for the WOOD 4.0 project.
-The implementations are not distributed since part of a closed-source project.
+The target machines of this system are woodworking machines for the WOOD 4.0 project.
+The concrete implementations are not distributed here because they are part of a closed-source system.
 
 Main contributors:
 - Angelo Filaseta (angelo.filaseta@unibo.it)
