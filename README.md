@@ -5,8 +5,8 @@ The target machines of this system are woodworking machines for the WOOD 4.0 pro
 The concrete implementations are not distributed here because they are part of a closed-source system.
 
 Main contributors:
-- Angelo Filaseta (angelo.filaseta@unibo.it)
-- Martina Baiardi (m.baiardi@unibo.it)
+- Angelo Filaseta (`angelo.filaseta@unibo.it`)
+- Martina Baiardi (`m.baiardi@unibo.it`)
 
 ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 [![codecov](https://codecov.io/github/unibo-wood-4-0/os-auto-updates/graph/badge.svg?token=1EYGc1WOTI)](https://codecov.io/github/unibo-wood-4-0/os-auto-updates)
